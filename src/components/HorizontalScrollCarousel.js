@@ -1,20 +1,11 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 
+
 const Example = () => {
   return (
-    <div className="bg-neutral-800">
-      <div className="flex h-48 items-center justify-center">
-        <span className="font-semibold uppercase text-neutral-500">
-          Scroll down
-        </span>
-      </div>
+    <div>
       <HorizontalScrollCarousel />
-      <div className="flex h-48 items-center justify-center">
-        <span className="font-semibold uppercase text-neutral-500">
-          Scroll up
-        </span>
-      </div>
     </div>
   );
 };
@@ -28,7 +19,7 @@ const HorizontalScrollCarousel = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-neutral-900">
+    <section ref={targetRef} className="relative h-[300vh]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-4">
           {cards.map((card) => {
@@ -44,7 +35,7 @@ const Card = ({ card }) => {
   return (
     <div
       key={card.id}
-      className="group relative h-[450px] w-[450px] overflow-hidden bg-neutral-200"
+      className="group relative h-[400px] w-[300px] overflow-hidden flex flex-wrap gap-3 rounded-md bg-neutral-200"
     >
       <div
         style={{
@@ -67,7 +58,7 @@ export default Example;
 
 const cards = [
   {
-    url: "/imgs/abstract/1.jpg",
+    url: 'src/assets/CCC.jpg',
     title: "Title 1",
     id: 1,
   },
